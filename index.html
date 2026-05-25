@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Templi Astarte</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+background: radial-gradient(circle at top, #3a0000 0%, #130000 40%, #000 100%);
+font-family: 'Inter', sans-serif;
+color:#f3d6d6;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background: radial-gradient(circle at center, rgba(255,0,0,.08), transparent 60%);
+pointer-events:none;
+animation:pulse 8s infinite;
+}
+
+@keyframes pulse{
+50%{opacity:.5}
+}
+
+header{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+padding:20px;
+overflow:hidden;
+}
+
+.hero{
+z-index:2;
+max-width:900px;
+}
+
+.neon-gold{
+font-family:'Cinzel', serif;
+font-size:4rem;
+color:#ffd700;
+text-shadow:
+0 0 5px #ffd700,
+0 0 10px #ffbf00,
+0 0 20px #ffcc00,
+0 0 40px rgba(255,215,0,.7);
+animation: shimmer 2s infinite alternate;
+}
+
+@keyframes shimmer{
+from{filter:brightness(1)}
+to{filter:brightness(1.4)}
+}
+
+.subtitle{
+margin-top:15px;
+font-size:1.2rem;
+color:#ffb3b3;
+}
+
+.section{
+padding:90px 10%;
+position:relative;
+z-index:2;
+}
+
+.card{
+background:rgba(20,0,0,.75);
+border:1px solid rgba(255,0,0,.25);
+backdrop-filter:blur(10px);
+border-radius:25px;
+padding:30px;
+margin-top:30px;
+box-shadow:0 0 30px rgba(255,0,0,.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 40px rgba(255,0,0,.35);
+}
+
+h2{
+font-family:'Cinzel', serif;
+font-size:2rem;
+margin-bottom:15px;
+color:#ffd700;
+text-shadow:0 0 10px gold;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.service-card{
+background:linear-gradient(145deg,#170000,#320000);
+padding:25px;
+border-radius:22px;
+border:1px solid rgba(255,0,0,.3);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.service-card:hover{
+transform:scale(1.03);
+box-shadow:0 0 30px rgba(255,0,0,.4);
+}
+
+.service-card::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(transparent, rgba(255,0,0,.08));
+}
+
+.price{
+font-size:1.4rem;
+color:#ffd700;
+margin-top:15px;
+font-weight:bold;
+}
+
+ul{padding-left:20px;margin-top:15px}
+li{margin:8px 0}
+
+.candle{
+position:fixed;
+bottom:0;
+width:60px;
+opacity:.9;
+z-index:1;
+pointer-events:none;
+animation:flicker .15s infinite alternate;
+}
+
+.left-candle{left:20px}
+.right-candle{right:20px}
+
+@keyframes flicker{
+from{filter:brightness(1)}
+to{filter:brightness(1.2)}
+}
+
+.bat{
+position:fixed;
+font-size:32px;
+color:#700;
+animation:fly linear infinite;
+pointer-events:none;
+}
+
+@keyframes fly{
+0%{transform:translateX(-100px) translateY(0)}
+100%{transform:translateX(120vw) translateY(-120px)}
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:28px;
+padding:18px;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,0,0,.3);
+z-index:9999;
+}
+
+.navbar a{
+text-decoration:none;
+font-family:'Cinzel', serif;
+color:#ffd700;
+font-weight:600;
+text-shadow:0 0 10px gold;
+transition:.3s;
+}
+
+.navbar a:hover{
+transform:translateY(-2px);
+text-shadow:0 0 18px gold;
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#caa;
+}
+
+button{
+margin-top:25px;
+padding:15px 30px;
+border:none;
+border-radius:40px;
+background:linear-gradient(to right,#6a0000,#a00000);
+color:#fff;
+font-size:1rem;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,0,0,.3);
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@media(max-width:768px){
+.neon-gold{font-size:2.8rem}
+.section{padding:70px 7%}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+<a href="#top">Home</a>
+<a href="#history">History</a>
+<a href="#about">Owner</a>
+<a href="#services">Services</a>
+<a href="https://www.instagram.com/templi.astarte" target="_blank">Instagram</a>
+</nav>
+
+<div class="bat" style="top:10%; animation-duration:12s;">🦇</div>
+<div class="bat" style="top:25%; animation-duration:18s;">🦇</div>
+<div class="bat" style="top:45%; animation-duration:14s;">🦇</div>
+<div class="bat" style="top:60%; animation-duration:20s;">🦇</div>
+<div class="bat" style="top:75%; animation-duration:16s;">🦇</div>
+
+<div class="candle left-candle">🕯️</div>
+<div class="candle right-candle">🕯️</div>
+
+<header id="top">
+<div class="hero">
+<h1 class="neon-gold">Templi Astarte</h1>
+<p class="subtitle">Dark Mysticism • Divine Guidance • Egyptian & Angelic Practices</p>
+<button onclick="document.getElementById('services').scrollIntoView()">Enter the Temple</button>
+</div>
+</header>
+
+<section class="section" id="history">
+<div class="card">
+<h2>Who are Inanna, Astarte & Isis?</h2>
+<p>
+Inanna, Astarte, and Isis are revered divine feminine figures from ancient civilizations. Inanna emerged from Mesopotamia as a goddess associated with love, power, and transformation. Astarte was honored in the Levant and linked with fertility, sovereignty, and celestial symbolism. Isis became one of the most beloved goddesses of ancient Egypt, associated with wisdom, healing, magic, and devotion.
+<br><br>
+Across history, cultures sometimes blended or connected goddesses through a process called <em>syncretism</em>. Some spiritual traditions see shared themes between them—divine femininity, protection, love, and transformation—while historians generally view them as distinct deities shaped by different cultures.
+</p>
+</div>
+
+<div class="card" id="about">
+<h2>About the Owner</h2>
+<p>
+Welcome to Templi Astarte. This space is run by a young spiritual practitioner passionate about mysticism, Egyptian symbolism, angelic guidance, divination, and spiritual education. The purpose of this temple is to offer spiritual guidance, reflection, and symbolic practices in a respectful way.
+</p>
+</div>
+</section>
+
+<section class="section" id="services">
+<h1 class="neon-gold" style="font-size:2.5rem;text-align:center;">Services</h1>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h2>1. Light Magic Healing</h2>
+<ul>
+<li>Improve finances, reconnect with people, and explore spiritual reflection through angelic symbolism.</li>
+<li>Spiritual cleansing, protection, and positivity-focused rituals. 😇</li>
+<li>Includes symbolic rites, rituals, and intention-focused spiritual work.</li>
+<li>Guidance may require multiple sessions depending on personal goals.</li>
+</ul>
+<div class="price">₹444 per request</div>
+<a href="https://www.instagram.com/templi.astarte" target="_blank"><button>DM to Buy</button></a>
+</div>
+
+<div class="service-card">
+<h2>2. Egyptian Divination Session</h2>
+<p>
+Through Egyptian-inspired scrying and tarot practices, explore symbolism, reflection, and spiritual guidance.
+</p>
+<p style="font-weight:bold; color:#ffd700; margin-top:15px; text-shadow:0 0 10px gold;">
+THIS ALSO WORKS FOR CHANNELING DIVINE BEINGS
+</p>
+<a href="https://www.instagram.com/templi.astarte" target="_blank"><button>DM to Buy</button></a>
+</div>
+
+<div class="service-card">
+<h2>3. Tarot & Oracle Readings</h2>
+<ul>
+<li>One Question: ₹80</li>
+<li>Pendulum Question (Yes/No): ₹50</li>
+<li>Love Reading with Guidance: ₹222</li>
+<li>Angelic Reading with Guidance: ₹222</li>
+</ul>
+<a href="https://www.instagram.com/templi.astarte" target="_blank"><button>DM to Buy</button></a>
+</div>
+
+</div>
+</section>
+
+<footer>
+Templi Astarte ✦ Enter the Mysteries of Divine Wisdom
+</footer>
+
+<script>
+document.addEventListener('mousemove', e => {
+const bats = document.querySelectorAll('.bat');
+bats.forEach((bat, i)=>{
+const speed = (i+1)*0.004;
+bat.style.transform = `translate(${e.clientX*speed}px, ${e.clientY*speed}px)`;
+});
+});
+</script>
+
+</body>
+</html>
