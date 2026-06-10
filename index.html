@@ -1,398 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Templi Astarte</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HEKA | Royal Temple of Isis</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-html{
 scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(180deg,#05071d,#090f38,#05071d);
-font-family:Poppins,sans-serif;
-color:white;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#090503,#1a0d05,#2b1606);
+color:#f8e7be;
 overflow-x:hidden;
 }
 
 /* Floating Symbols */
-
 .symbol{
 position:fixed;
-opacity:.18;
-font-size:2rem;
-animation:float 20s linear infinite;
+font-size:24px;
 pointer-events:none;
+opacity:0.3;
+animation:float linear infinite;
 z-index:0;
 }
 
 @keyframes float{
 0%{
-transform:translateY(110vh) rotate(0deg);
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+20%{
+opacity:0.35;
 }
 100%{
-transform:translateY(-120vh) rotate(360deg);
+transform:translateY(-100vh) rotate(360deg);
+opacity:0;
 }
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+position:relative;
 }
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:40px;
-position:relative;
 z-index:2;
 }
 
-.hero-content{
-max-width:850px;
-}
-
-.hero h1{
-font-family:Cinzel,serif;
+.logo{
+font-family:'Cinzel',serif;
 font-size:4rem;
-color:#e7b75c;
-text-shadow:0 0 25px #e7b75c;
-margin-bottom:20px;
+color:#FFD700;
+text-shadow:0 0 20px gold;
+letter-spacing:5px;
 }
 
-.hero p{
-font-size:1.2rem;
-line-height:1.8;
-color:#ddd;
+.tagline{
+font-size:1.1rem;
+margin-top:10px;
+max-width:700px;
+color:#e7d6a5;
 }
 
-.buttons{
-margin-top:35px;
-display:flex;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
+.hero h2{
+font-size:2rem;
+margin-top:15px;
+color:#fff0c4;
 }
 
-.btn{
-padding:15px 35px;
-background:#e7b75c;
-color:#111;
-font-weight:600;
+.main-btn{
+margin-top:25px;
+display:inline-block;
+padding:14px 35px;
+background:linear-gradient(45deg,#d4af37,#b8860b);
+color:black;
+font-weight:bold;
+border-radius:40px;
 text-decoration:none;
-border-radius:50px;
+box-shadow:0 0 20px rgba(255,215,0,.5);
 transition:.3s;
 }
 
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 0 20px #e7b75c;
+.main-btn:hover{
+transform:scale(1.08);
 }
 
 section{
-padding:90px 10%;
+padding:80px 8%;
 position:relative;
 z-index:2;
 }
 
 .section-title{
-font-family:Cinzel,serif;
-font-size:3rem;
-color:#e7b75c;
 text-align:center;
+font-family:'Cinzel',serif;
+font-size:2.5rem;
+color:#FFD700;
 margin-bottom:40px;
-text-shadow:0 0 15px #e7b75c;
+text-shadow:0 0 15px rgba(255,215,0,.4);
+}
+
+.about-box{
+background:rgba(255,215,0,.08);
+border:1px solid rgba(255,215,0,.25);
+padding:30px;
+border-radius:25px;
+backdrop-filter:blur(12px);
+line-height:1.8;
+box-shadow:0 0 20px rgba(255,215,0,.12);
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-padding:35px;
+background:rgba(255,215,0,.08);
+border:1px solid rgba(255,215,0,.2);
+padding:28px;
 border-radius:25px;
-border:1px solid rgba(231,183,92,.2);
-margin-bottom:35px;
+backdrop-filter:blur(10px);
+transition:.4s;
+box-shadow:0 0 20px rgba(255,215,0,.1);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(255,215,0,.3);
 }
 
 .card h3{
-font-family:Cinzel,serif;
-color:#e7b75c;
-font-size:2rem;
-margin-bottom:20px;
-}
-
-.card p,
-.card li{
-line-height:1.8;
-color:#ddd;
+font-family:'Cinzel',serif;
+color:#FFD700;
+margin-bottom:15px;
+font-size:1.5rem;
 }
 
 .price{
-font-size:2rem;
-color:#e7b75c;
+font-size:1.2rem;
 font-weight:bold;
+margin:15px 0;
+color:#fff2b5;
+}
+
+.card ul{
+padding-left:18px;
+line-height:1.8;
+}
+
+.buy-btn{
+display:inline-block;
 margin-top:20px;
-}
-
-ul{
-padding-left:20px;
-}
-
-.contact{
-text-align:center;
-}
-
-.contact a{
-color:#e7b75c;
+padding:12px 28px;
+border-radius:40px;
 text-decoration:none;
+font-weight:bold;
+background:linear-gradient(45deg,#FFD700,#c89d00);
+color:black;
+}
+
+.community{
+text-align:center;
+padding:70px 30px;
+border-radius:30px;
+background:rgba(255,215,0,.09);
+border:1px solid rgba(255,215,0,.25);
+box-shadow:0 0 30px rgba(255,215,0,.15);
+}
+
+.community h2{
+font-family:'Cinzel',serif;
+font-size:2.4rem;
+color:#FFD700;
+margin-bottom:20px;
+}
+
+.community p{
+max-width:800px;
+margin:auto;
+line-height:1.9;
+font-size:1rem;
 }
 
 footer{
-padding:40px;
+padding:30px;
 text-align:center;
-color:#aaa;
-border-top:1px solid rgba(255,255,255,.1);
-}
-
-.glow{
-text-shadow:0 0 20px #e7b75c;
+color:#ccb77f;
+font-size:.9rem;
 }
 
 @media(max-width:768px){
-
-.hero h1{
-font-size:2.8rem;
+.logo{
+font-size:3rem;
 }
-
+.hero h2{
+font-size:1.5rem;
+}
 .section-title{
-font-size:2.2rem;
+font-size:2rem;
 }
-
-.card h3{
-font-size:1.6rem;
 }
-
-}
-
 </style>
 </head>
-
 <body>
 
-<!-- Floating Symbols -->
+<!-- Floating Egyptian Symbols -->
+<script>
+const symbols = ["☥","✨","𓂀","🌙","🕯️","☥","✨"];
+for(let i=0;i<35;i++){
+let s=document.createElement("div");
+s.classList.add("symbol");
+s.innerHTML=symbols[Math.floor(Math.random()*symbols.length)];
+s.style.left=Math.random()*100+"vw";
+s.style.animationDuration=(8+Math.random()*15)+"s";
+s.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(s);
+}
+</script>
 
-<div class="symbol" style="left:5%;animation-duration:24s;">☥</div>
-<div class="symbol" style="left:15%;animation-duration:20s;">🌙</div>
-<div class="symbol" style="left:30%;animation-duration:26s;">✨</div>
-<div class="symbol" style="left:50%;animation-duration:22s;">🦇</div>
-<div class="symbol" style="left:70%;animation-duration:28s;">⭐</div>
-<div class="symbol" style="left:85%;animation-duration:23s;">☥</div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>☥ Templi Astarte ☥</h1>
-
-<p>
-An occult community dedicated to symbolism, mythology,
-spiritual exploration, and esoteric traditions.
-Explore tarot, Egyptian-inspired spirituality,
-ritual symbolism, and personal reflection.
+<header>
+<div class="hero">
+<div class="logo">☥ HEKA ☥</div>
+<h2>Royal Temple of Isis</h2>
+<p class="tagline">
+Ancient Egyptian spirituality, divine wisdom, occult guidance, energy work, rituals and sacred knowledge inspired by the eternal mysteries of Kemet.
 </p>
 
-<div class="buttons">
-
-<a href="#services" class="btn">Explore Services</a>
-
-<a href="#contact" class="btn">Book Now</a>
-
+<a class="main-btn" href="https://instagram.com/thatkemeticwitch" target="_blank">
+Enter The Temple
+</a>
 </div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
+</header>
 
 <section>
+<h2 class="section-title">𓂀 What Is Egyptian Religion?</h2>
 
-<h2 class="section-title">About</h2>
+<div class="about-box">
+Ancient Egyptian Religion, also called <b>Kemetic Spirituality</b>, is one of the oldest sacred traditions in the world. It honors divine forces called <b>Neteru</b>, including powerful deities like <b>Isis (Auset)</b>, Osiris, Ra, Hathor, Anubis, Bastet and Thoth.
 
-<div class="card">
+The goddess <b>Isis/Auset</b> represents healing, divine motherhood, protection, wisdom, magic and sacred feminine power. Egyptian spirituality focuses on balance, truth, manifestation, spiritual growth, energy alignment, devotion and sacred ritual practices.
 
-<p>
-Templi Astarte is an online occult community inspired by
-ancient symbolism, mythology, and spiritual traditions.
-We encourage exploration of tarot, divination,
-ritual symbolism, meditation, and personal reflection.
-Whether you are a beginner or a seasoned practitioner,
-our community welcomes those fascinated by the mysteries
-of the ancient and esoteric world.
-</p>
-
+At <b>HEKA</b>, we embrace the mystical beauty of ancient Egypt through sacred guidance, spiritual services and divine wisdom inspired by the eternal temple traditions of Kemet.
 </div>
-
 </section>
-
-<!-- ABOUT ME -->
 
 <section>
+<h2 class="section-title">☥ Sacred Services ☥</h2>
 
-<h2 class="section-title">About Me</h2>
+<div class="services">
 
 <div class="card">
-
-<h3>Mohit Sharma</h3>
-
-<p>
-Mohit Sharma is a young occult enthusiast with a strong
-interest in mythology, tarot symbolism, Egyptian spirituality,
-comparative religion, and esoteric traditions.
-</p>
-
-<br>
-
-<p>
-As a minor, he approaches occult studies primarily through
-education, symbolism, historical research, and personal
-exploration. Through Templi Astarte, he shares his fascination
-with mystical traditions while creating a welcoming space
-for discussion, learning, and reflection.
-</p>
-
+<h3>Tarot Reading</h3>
+<p>Personalized spiritual guidance and insight.</p>
+<div class="price">Price: Session:₹500 1 Question: ₹50</div>
+<ul>
+<li>Love Reading</li>
+<li>Career Guidance</li>
+<li>Future Energy</li>
+<li>Spiritual Messages</li>
+</ul>
+<a class="buy-btn" href="https://instagram.com/thatkemeticwitch" target="_blank">DM To Buy</a>
 </div>
 
+<div class="card">
+<h3>Manifestation and Energy work</h3>
+<p>Manifestation and spiritual workings aligned with your intention.</p>
+<div class="price">Price: ₹500 </div>
+<ul>
+<li>Glamour Magic</li>
+<li>Abundance, Prosperity</li>
+<li>Self Love and protection</li>
+<li>Road Opening and deity work</li>
+</ul>
+<a class="buy-btn" href="https://instagram.com/thatkemeticwitch" target="_blank">DM To Buy</a>
+</div>
+
+<div class="card">
+<h3>Energy Cleansing</h3>
+<p>Remove stagnant or heavy spiritual energy.</p>
+<div class="price">Price: ₹500 per session</div>
+<ul>
+<li>Negative Energy Removal</li>
+<li>Sound healing</li>
+<li>Aura, energy and crystal guidance</li>
+</ul>
+<a class="buy-btn" href="https://instagram.com/thatkemeticwitch" target="_blank">DM To Buy</a>
+</div>
+
+<div class="card">
+<h3>Occult Guidance</h3>
+<p>Beginner to advanced spiritual consultation.</p>
+<div class="price"> Price: ₹500 per session</div>
+<ul>
+<li>Deity Work</li>
+<li>Egyptian Spirituality</li>
+<li>Altar Guidance</li>
+<li>Occult Knowledge</li>
+</ul>
+<a class="buy-btn" href="https://instagram.com/thatkemeticwitch" target="_blank">DM To Buy</a>
+</div>
+
+</div>
 </section>
 
-<!-- SERVICES -->
+<section>
+<div class="community">
 
-<section id="services">
+<h2>☥ Join Our Sacred Occult Community ☥</h2>
 
-<h2 class="section-title">Services</h2>
+<p>
+Step into a divine space dedicated to ancient wisdom, occult teachings, spiritual growth and sacred Egyptian mysteries. Connect with like-minded seekers, receive mystical guidance, explore Kemetic spirituality, deity devotion, magical practices and a welcoming temple for spiritual discovery.
+<br><br>
+Become part of the growing <b>HEKA</b> family and begin your sacred path.
+</p>
 
-<div class="card">
-
-<h3>☥ Light Magic Reflection Session</h3>
-
-<ul>
-<li>Explore symbolic spiritual practices and reflection.</li>
-<li>Intention-focused guidance and discussion.</li>
-<li>Spiritual symbolism and personal exploration.</li>
-<li>May require multiple sessions depending on goals.</li>
-</ul>
-
-<div class="price">₹444</div>
-
-<br>
-
-<a class="btn"
-href="https://instagram.com/templi.astarte"
-target="_blank">
-DM on Instagram
+<a class="main-btn" href="https://instagram.com/thatkemeticwitch" target="_blank">
+DM Us!
 </a>
 
 </div>
-
-<div class="card">
-
-<h3>🔮 Egyptian Divination Session</h3>
-
-<p>
-Explore Egyptian-inspired symbolism, tarot practices,
-reflection, and spiritual guidance through symbolic
-divination methods.
-</p>
-
-<br>
-
-<a class="btn"
-href="https://instagram.com/templi.astarte"
-target="_blank">
-DM on Instagram
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>🌙 Tarot & Oracle Readings</h3>
-
-<ul>
-<li>One Question Reading — ₹80</li>
-<li>Pendulum Question (Yes/No) — ₹50</li>
-<li>Love Reading with Guidance — ₹222</li>
-<li>Angelic Reading with Guidance — ₹222</li>
-</ul>
-
-<br>
-
-<a class="btn"
-href="https://instagram.com/templi.astarte"
-target="_blank">
-DM on Instagram
-</a>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2 class="section-title">Bookings</h2>
-
-<div class="card contact">
-
-<h3>Contact</h3>
-
-<p>
-Instagram:
-</p>
-
-<p>
-<a href="https://instagram.com/templi.astarte">
-@templi.astarte
-</a>
-</p>
-
-<br>
-
-<p>
-Email:
-</p>
-
-<p class="glow">
-Work.emailm13@gmail.com
-</p>
-
-</div>
-
 </section>
 
 <footer>
-
-☥ Templi Astarte ☥
-
-<br><br>
-
-For entertainment, symbolic exploration, and personal
-reflection purposes only. Services do not provide medical,
-legal, financial, or psychological advice and do not
-guarantee specific outcomes.
-
+☥ HEKA — Temple of Ancient Wisdom ☥
 </footer>
 
 </body>
